@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="js/script.js"></script>
+    <script src="js/text-analyzer.js"></script>
 </head>
 <body>
     <div class="container">
@@ -33,7 +34,7 @@
 
             <section class="quick-links">
                 <div class="link-card">
-                    <h3>Explore Vijayawada</h3>
+                    <h3>My Gallery</h3>
                     <a href="gallery.html" class="btn">Explore</a>
                 </div>
                 <div class="link-card">
@@ -48,7 +49,39 @@
 
             <section class="cv-section">
                 <h2>My CV</h2>
-                <a href="docs/Profile.pdf" class="download-btn" target="_blank">Download CV</a>
+                <a href="docs/Profile.pdf" class="download-btn" target="_blank">View CV</a>
+            </section>
+            
+            <section class="text-analysis-section section">
+                <h2>Text Analysis Tool</h2>
+                <h4>This analyser helps you to analyse an amount of English text that has been given</h4>
+                <br>
+                <div class="text-input-container">
+                    <textarea id="textInput" placeholder="Enter text here..." rows="10"></textarea>
+                    <button id="analyzeBtn" class="btn">Analyze Text</button>
+                </div>
+                
+                <div class="analysis-results">
+                    <div class="result-card">
+                        <h3>Basic Statistics</h3>
+                        <div id="basicStats"></div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <h3>Pronoun Analysis</h3>
+                        <div id="pronounStats"></div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <h3>Preposition Analysis</h3>
+                        <div id="prepositionStats"></div>
+                    </div>
+                    
+                    <div class="result-card">
+                        <h3>Indefinite Article Analysis</h3>
+                        <div id="articleStats"></div>
+                    </div>
+                </div>
             </section>
         </main>
 
