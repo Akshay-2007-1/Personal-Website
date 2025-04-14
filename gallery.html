@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijayawada Gallery</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1>Explore Vijayawada</h1>
+            <p class="tagline">A Journey Through My Hometown</p>
+        </header>
+
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="educ.html">Education</a>
+            <a href="skill.html">Skills</a>
+        </nav>
+
+        <main>
+            <section class="gallery-section">
+                <h2>Beautiful Locations</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <h3>Kanaka Durga Temple</h3>
+                        <iframe src="https://www.youtube.com/embed/3hp-K8CiTP0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="gallery-item">
+                        <h3>Prakasam Barrage</h3>
+                        <iframe src="https://www.youtube.com/embed/Dme_qk66Iz0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="gallery-item">
+                        <h3>Bhavani Island</h3>
+                        <iframe src="https://www.youtube.com/embed/cwQzuMROz0U" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="gallery-item">
+                        <h3>Undavalli Caves</h3>
+                        <iframe src="https://www.youtube.com/embed/HGawGgfrZao" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Akshay Vemulapalli. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <style>
+        .gallery-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background-color: var(--background-color);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item iframe {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

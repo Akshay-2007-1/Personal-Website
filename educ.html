@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Achievements</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1>Educational Journey</h1>
+            <p class="tagline">Achievements and Milestones</p>
+        </header>
+
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="skill.html">Skills</a>
+        </nav>
+
+        <main>
+            <section class="achievements-section">
+                <h2>My Achievements</h2>
+                <div class="achievement-grid">
+                    <div class="achievement-card">
+                        <h3>ISC Top 1%</h3>
+                        <p>Secured top 1% in ISC 2024 XII board examinations!</p>
+                        <span class="achievement-year">2024</span>
+                    </div>
+                    <div class="achievement-card">
+                        <h3>ISC Mathematics Top 0.1%</h3>
+                        <p>100% score in Mathematics ISC 2024 XII examinations!</p>
+                        <span class="achievement-year">2024</span>
+                    </div>
+                    <div class="achievement-card">
+                        <h3>Muskurahat Foundation</h3>
+                        <p>Raised INR 32,000 for quality education</p>
+                        <a href="https://www.muskurahat.org.in/" target="_blank" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </section>
+            <section class="achievements-section">
+                <h2>My Schools</h2>
+                <div class="achievement-card">
+                    <h3>Little Hearts High Public School</h3>
+                    <p>Completed my lower and upper kindergarten grades here!</p>
+                    <span class="achievement-year">2010 - 2012</span>
+                </div>
+                <div class="achievement-card">
+                    <h3>Nalanda Vidya Nikethan, Vijayawada</h3>
+                    <p>Completed my 1st through 5th grades here!</p>
+                    <span class="achievement-year">2012 - 2017</span>
+                    <a href="https://nvn.edu.in/" target="_blank" class="btn">Learn More</a>
+                </div>
+                <div class="achievement-card">
+                    <h3>Sahyadri School</h3>
+                    <p>Where I remember most of my childhood from! A second home.</p>
+                    <p>Completed my 6th through 12th grades here!</p>
+                    <span class="achievement-year">2017 - 2024</span>
+                    <a href="https://www.sahyadrischool.org/" target="_blank" class="btn">Learn More</a>
+                </div>
+                <div class="achievement-card">
+                    <h3>IIIT Hyderabad</h3>
+                    <p>Currently pursuing my BTech in CSE and MSc in Computational Natural Sciences here!</p>
+                    <span class="achievement-year">2024 - NOW</span>
+                    <a href="https://www.iiit.ac.in/" target="_blank" class="btn">Learn More</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Akshay Vemulapalli. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <style>
+        .achievements-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .achievement-card {
+            background-color: var(--background-color);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            background-color:#e0efff;
+        }
+
+        .achievement-year {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .achievement-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>
