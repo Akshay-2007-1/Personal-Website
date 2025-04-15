@@ -7,6 +7,7 @@
     <title>Vijayawada Gallery</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="js/script.js"></script>
 </head>
 <body>
     <div class="container">
@@ -27,19 +28,36 @@
                 <div class="gallery-grid">
                     <div class="gallery-item">
                         <h3>Kanaka Durga Temple</h3>
-                        <iframe src="https://www.youtube.com/embed/3hp-K8CiTP0" frameborder="0" allowfullscreen></iframe>
+                        <img src="images/local1.jpeg" alt="Kanaka Durga Temple"></img>
                     </div>
                     <div class="gallery-item">
                         <h3>Prakasam Barrage</h3>
-                        <iframe src="https://www.youtube.com/embed/Dme_qk66Iz0" frameborder="0" allowfullscreen></iframe>
+                        <img src="images/local2.jpeg" alt="Prakasam Barrage"></img>
                     </div>
                     <div class="gallery-item">
                         <h3>Bhavani Island</h3>
-                        <iframe src="https://www.youtube.com/embed/cwQzuMROz0U" frameborder="0" allowfullscreen></iframe>
+                        <img src="images/bhavani-island-resort-bhavanipuram-vijayawada-hotels-1e0s67n.webp" alt="Bhavani Island"></img>
                     </div>
                     <div class="gallery-item">
                         <h3>Undavalli Caves</h3>
-                        <iframe src="https://www.youtube.com/embed/HGawGgfrZao" frameborder="0" allowfullscreen></iframe>
+                        <img src="images/Undavallicave.webp" alt="Undavalli Caves"></img>
+                    </div>
+                </div>
+            </section>
+            <section class="gallery-section">
+                <h2>Memories...</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/VI_class.png" alt="Kanaka Durga Temple"></img>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/sahyadri1.jpeg" alt="Prakasam Barrage"></img>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/sahyadri2.jpeg" alt="Bhavani Island"></img>
+                    </div>
+                    <div class="gallery-item">  
+                        <img src="images/sahyadri3.jpeg" alt="Undavalli Caves"></img>
                     </div>
                 </div>
             </section>
@@ -55,6 +73,7 @@
             background-color: white;
             border-radius: 10px;
             padding: 30px;
+            margin-top: 30px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
@@ -81,6 +100,16 @@
             height: 250px;
             border-radius: 10px;
         }
+        
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+
+
 
         @media (max-width: 768px) {
             .gallery-grid {

@@ -1,83 +1,57 @@
-// User Interaction Tracking Script
-document.addEventListener('DOMContentLoaded', function() {
-    const timestamp = new Date().toISOString();
-    console.log(`${timestamp}, view, page-${window.location.pathname}`);
-    
-    // Track all click events
-    document.addEventListener('click', function(event) {
-        // Get the clicked element
-        const element = event.target;
-        
-        const currentTimestamp = new Date().toISOString();
-        
-        // Get element details
-        const tagName = element.tagName;
-        let eventObject = tagName.toLowerCase();
-        
-        // Determine the event object type more specifically
-        if (tagName === 'IMG') {
-            eventObject = 'image';
-        } else if (tagName === 'A') {
-            eventObject = 'link';
-        } else if (tagName === 'BUTTON') {
-            eventObject = 'button';
-        } else if (element.className.includes('nav')) {
-            eventObject = 'navigation';
-        } else if (element.className.includes('btn')) {
-            eventObject = 'button';
-        } else if (element.className.includes('card')) {
-            eventObject = 'card';
-        } else if (element.className.includes('gallery')) {
-            eventObject = 'gallery';
-        } else if (tagName === 'INPUT') {
-            eventObject = 'form-field';
-        } else if (tagName === 'IFRAME') {
-            eventObject = 'video';
+window.addEventListener("load", () => {
+    function identifyElement(node) {
+        const tag = node.tagName;
+        if (!tag) return "unknown";
+
+        if (node.matches(".skill-set")) return "skill";
+        if (tag === "IMG") return "img";
+        if (tag === "A") return "anchor";
+        if (tag === "P") return "text";
+        if (/^H[1-6]$/.test(tag)) return "title";
+        if (tag === "LI") return "list-point";
+        return tag.toLowerCase();
+    }
+
+    function locateSection(targetNode) {
+        const container = targetNode.closest("section");
+        if (!container) return "generic-block";
+
+        const label = container.querySelector("h2");
+        if (label) return label.innerText.trim();
+
+        if (container.hasAttribute("id")) {
+            return container.getAttribute("id").trim();
         }
-        
-        // Log the click event with new format
-        console.log(`${currentTimestamp}, click, ${eventObject}`);
+
+        return "no-label";
+    }
+
+    document.addEventListener("click", (ev) => {
+        const timestamp = new Date().toLocaleString();
+        const nodeType = identifyElement(ev.target);
+        const sectionTitle = locateSection(ev.target);
+
+        console.log(`[${timestamp}] event: tap | element: ${nodeType} | part: ${sectionTitle}`);
     });
-    
-    // Track page visibility changes
-    document.addEventListener('visibilitychange', function() {
-        const currentTimestamp = new Date().toISOString();
-        if (document.visibilityState === 'hidden') {
-            console.log(`${currentTimestamp}, view-end, page-${window.location.pathname}`);
-        } else {
-            console.log(`${currentTimestamp}, view-return, page-${window.location.pathname}`);
+
+    const visibilityWatcher = new IntersectionObserver((observedItems) => {
+        for (const item of observedItems) {
+            if (item.isIntersecting) {
+                const viewedTime = new Date().toLocaleString();
+                const viewedType = identifyElement(item.target);
+                const viewedIn = locateSection(item.target);
+
+                console.log(`[${viewedTime}] event: appear | element: ${viewedType} | part: ${viewedIn}`);
+            }
         }
+    }, {
+        threshold: 0.1
     });
-    
-    // Track page unload
-    window.addEventListener('beforeunload', function() {
-        const currentTimestamp = new Date().toISOString();
-        console.log(`${currentTimestamp}, view-end, page-${window.location.pathname}`);
-        
-        // Calculate time spent on page
-        const timeSpent = Math.round((new Date() - performance.timing.navigationStart) / 1000);
-        console.log(`${currentTimestamp}, time-spent, ${timeSpent}-seconds`);
-    });
-    
-    // Track scrolling
-    let scrollTimeout;
-    window.addEventListener('scroll', function() {
-        clearTimeout(scrollTimeout);
-        
-        scrollTimeout = setTimeout(function() {
-            const currentTimestamp = new Date().toISOString();
-            const scrollPercentage = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-            console.log(`${currentTimestamp}, scroll, ${scrollPercentage}-percent`);
-        }, 300);
-    });
-    
-    // Log page load complete
-    window.addEventListener('load', function() {
-        const currentTimestamp = new Date().toISOString();
-        console.log(`${currentTimestamp}, load-complete, page-${window.location.pathname}`);
-        console.log(`${currentTimestamp}, load-time, ${(performance.now() / 1000).toFixed(2)}-seconds`);
-    });
+
+    const targets = document.querySelectorAll("section, img, p, a, .skill-set");
+    targets.forEach(element => visibilityWatcher.observe(element));
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const analyzeBtn = document.getElementById('analyzeBtn');
