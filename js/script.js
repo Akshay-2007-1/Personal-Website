@@ -31,7 +31,7 @@ window.addEventListener("load", () => {
         const nodeType = identifyElement(ev.target);
         const sectionTitle = locateSection(ev.target);
 
-        console.log(`[${timestamp}] event: tap | element: ${nodeType} | part: ${sectionTitle}`);
+        console.log(`[${timestamp}] event: click | element: ${nodeType} | part: ${sectionTitle}`);
     });
 
     const visibilityWatcher = new IntersectionObserver((observedItems) => {
@@ -41,7 +41,7 @@ window.addEventListener("load", () => {
                 const viewedType = identifyElement(item.target);
                 const viewedIn = locateSection(item.target);
 
-                console.log(`[${viewedTime}] event: appear | element: ${viewedType} | part: ${viewedIn}`);
+                console.log(`[${viewedTime}] event: view | element: ${viewedType} | part: ${viewedIn}`);
             }
         }
     }, {
