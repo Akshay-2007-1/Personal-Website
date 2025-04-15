@@ -68,11 +68,9 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Log the analysis start timestamp
         const timestamp = new Date().toISOString();
         console.log(`${timestamp}, text-analysis, started`);
         
-        // Perform all analyses
         analyzeBasicStats(text);
         analyzePronouns(text);
         analyzePrepositions(text);
@@ -84,22 +82,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function analyzeBasicStats(text) {
-        // Count characters (excluding spaces)
         const letters = text.replace(/[^a-zA-Z]/g, '').length;
         
-        // Count words
         const words = text.trim().split(/\s+/).length;
         
-        // Count spaces
         const spaces = text.split(' ').length - 1;
         
-        // Count newlines
         const newlines = text.split('\n').length - 1;
         
-        // Count special symbols (non-alphanumeric, non-space characters)
         const specialSymbols = text.replace(/[a-zA-Z0-9\s]/g, '').length;
         
-        // Display results
         const basicStatsElement = document.getElementById('basicStats');
         basicStatsElement.innerHTML = `
             <table class="stats-table">
@@ -112,13 +104,11 @@ document.addEventListener('DOMContentLoaded', function() {
             </table>
         `;
         
-        // Log the results
         const timestamp = new Date().toISOString();
         console.log(`${timestamp}, basic-stats, letters-${letters}-words-${words}-spaces-${spaces}-newlines-${newlines}-special-${specialSymbols}`);
     }
     
     function analyzePronouns(text) {
-        // Define a list of common pronouns
         const pronounsList = {
             personal: ['i', 'me', 'my', 'mine', 'myself', 'you', 'your', 'yours', 'yourself', 
                       'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself',
@@ -133,27 +123,22 @@ document.addEventListener('DOMContentLoaded', function() {
                         'several', 'all', 'some', 'most']
         };
         
-        // Tokenize the text (convert to lowercase and split by non-alphanumeric characters)
         const words = text.toLowerCase().match(/\b\w+\b/g) || [];
         
-        // Count pronouns by category
         const pronounCounts = {};
         
-        // Initialize counts
         for (const category in pronounsList) {
             pronounsList[category].forEach(pronoun => {
                 pronounCounts[pronoun] = 0;
             });
         }
         
-        // Count occurrences
         words.forEach(word => {
             if (pronounCounts.hasOwnProperty(word)) {
                 pronounCounts[word]++;
             }
         });
         
-        // Group by category for display
         const categoryResults = {};
         for (const category in pronounsList) {
             categoryResults[category] = {};
@@ -164,7 +149,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
-        // Display results
         const pronounStatsElement = document.getElementById('pronounStats');
         let html = '';
         
@@ -188,13 +172,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         pronounStatsElement.innerHTML = html;
         
-        // Log the results
         const timestamp = new Date().toISOString();
         console.log(`${timestamp}, pronoun-analysis, completed`);
     }
     
     function analyzePrepositions(text) {
-        // Define a list of common prepositions
         const prepositions = [
             'about', 'above', 'across', 'after', 'against', 'along', 'among', 'around',
             'at', 'before', 'behind', 'below', 'beneath', 'beside', 'between', 'beyond',
@@ -204,10 +186,8 @@ document.addEventListener('DOMContentLoaded', function() {
             'underneath', 'until', 'up', 'upon', 'with', 'within', 'without'
         ];
         
-        // Tokenize the text (convert to lowercase and split by non-alphanumeric characters)
         const words = text.toLowerCase().match(/\b\w+\b/g) || [];
         
-        // Count prepositions
         const prepositionCounts = {};
         prepositions.forEach(prep => {
             prepositionCounts[prep] = 0;
@@ -219,12 +199,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Filter out prepositions with zero count
         const foundPrepositions = Object.keys(prepositionCounts)
             .filter(prep => prepositionCounts[prep] > 0)
             .sort((a, b) => prepositionCounts[b] - prepositionCounts[a]);
         
-        // Display results
         const prepositionStatsElement = document.getElementById('prepositionStats');
         
         if (foundPrepositions.length > 0) {
@@ -240,27 +218,21 @@ document.addEventListener('DOMContentLoaded', function() {
             prepositionStatsElement.innerHTML = '<p>No prepositions found in the text.</p>';
         }
         
-        // Log the results
         const timestamp = new Date().toISOString();
         console.log(`${timestamp}, preposition-analysis, completed`);
     }
     
     function analyzeIndefiniteArticles(text) {
-        // Define the indefinite articles
         const articles = ['a', 'an'];
         
-        // For "a" vs "an" context analysis
         const followingA = {};
         const followingAn = {};
         
-        // Tokenize the text into words with context
         const words = text.toLowerCase().match(/\b\w+\b/g) || [];
         
-        // Count articles
         let aCount = 0;
         let anCount = 0;
         
-        // Analyze each word in context
         for (let i = 0; i < words.length - 1; i++) {
             if (words[i] === 'a') {
                 aCount++;
@@ -274,15 +246,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // Display results
         const articleStatsElement = document.getElementById('articleStats');
         
         let html = '<table class="stats-table"><tr><th>Article</th><th>Count</th></tr>';
         html += `<tr><td>a</td><td>${aCount}</td></tr>`;
         html += `<tr><td>an</td><td>${anCount}</td></tr>`;
         html += '</table>';
-        
-        // Show some examples of usage context if available
+
         if (aCount > 0 || anCount > 0) {
             html += '<h4>Usage Examples</h4>';
             
@@ -319,7 +289,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         articleStatsElement.innerHTML = html;
         
-        // Log the results
         const timestamp = new Date().toISOString();
         console.log(`${timestamp}, article-analysis, a-${aCount}-an-${anCount}`);
     }
