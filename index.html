@@ -4,56 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akshay Vemulapalli</title>
+    <meta name="description" content="Akshay Vemulapalli, CS and Maths student at NUS. Backend at Source Academy, CS1101S TA.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="js/script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <header class="hero">
-            <div class="hero-content">
-                <img src="images/profile.jpeg" alt="Akshay Vemulapalli" class="profile-img">
+    <nav class="site-nav">
+        <div class="container">
+            <a href="#" class="name">Akshay Vemulapalli</a>
+            <ul>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="docs/AV_Resume.pdf" target="_blank">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="intro">
+            <img src="images/profile.jpeg" alt="Akshay Vemulapalli">
+            <div>
                 <h1>Akshay Vemulapalli</h1>
-                <p class="tagline">CS and Maths at NUS. Backend at Source Academy.</p>
+                <p>Computer Science and Mathematics at NUS, Singapore.</p>
+                <div class="links">
+                    <a href="docs/AV_Resume.pdf" target="_blank" class="primary">Resume</a>
+                    <a href="https://github.com/Akshay-2007-1">GitHub</a>
+                    <a href="https://www.linkedin.com/in/akshay-vemulapalli/">LinkedIn</a>
+                    <a href="mailto:akshayvemulapalli2007@gmail.com">Email</a>
+                </div>
             </div>
         </header>
 
-        <nav class="main-nav">
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="educ.html">Education</a>
-            <a href="skill.html">Skills</a>
-        </nav>
+        <section id="about">
+            <h2>About</h2>
+            <p>I'm a second-year student at NUS. I grew up in Vijayawada, went to school at Sahyadri, and spent a year at IIIT Hyderabad before moving to Singapore.</p>
+            <p>Most of my time goes into Source Academy, the platform NUS uses to teach its first programming module. I run its backend, teach the module as a TA, and I'm helping move the course from JavaScript to Python. Outside of that I write problems for Shipd that AI models tend to get wrong, and I usually have a side project or two going. I also debate for RC4.</p>
+        </section>
 
-        <main>
-            <section id="about" class="section">
-                <h2>About</h2>
-                <p>I'm Akshay, a second-year student at NUS studying Computer Science and Mathematics. I grew up in Vijayawada and went to school at Sahyadri. Outside of code I enjoy debating, mostly the logic and philosophy side of it.</p>
-                <p>At the moment I run the backend for NUS Source Academy, which includes the autograder for CS1101S, and I teach the module as a TA. I also write programming problems for Shipd that AI models tend to get wrong. Earlier this year I spent a while getting Python to run on the LEGO EV3 robots, and that part is done now.</p>
-            </section>
+        <section id="work">
+            <h2>Work</h2>
 
-            <section id="work" class="section">
-                <h2>Projects</h2>
-                <ul class="project-list">
-                    <li><a href="https://github.com/Akshay-2007-1/o1-exchange-engine">O(1) Exchange</a> <span>A C++ order book and matching engine with a live React dashboard, built for NUS Orbital 2026. <a href="https://o1-exchange-engine.vercel.app">Demo</a></span></li>
-                    <li><a href="https://github.com/Akshay-2007-1/TechTokers">TechTokers</a> <span>A control layer for coding agents that checks, limits and verifies what they do. TikTok TechJam 2026.</span></li>
-                    <li><a href="https://github.com/Akshay-2007-1/omarchy-storage-drilldown">omarchy-storage-drilldown</a> <span>A disk usage widget where you can click into folders to see what is taking the space.</span></li>
-                    <li><a href="https://github.com/Akshay-2007-1/SplitWise_spinoff">Split-It</a> <span>An Android expense splitter in Kotlin, made with a friend as our first app.</span></li>
-                    <li><a href="https://github.com/Akshay-2007-1/roleplay">roleplay</a> <span>A roleplay engine that keeps state in markdown so each turn costs the same however long the story is.</span></li>
-                </ul>
-                <p>My Source Academy pull requests are on <a href="https://github.com/Akshay-2007-1">GitHub</a>.</p>
-            </section>
+            <div class="entry">
+                <h3>Source Academy, NUS School of Computing</h3>
+                <span class="when">Aug 2026 – now</span>
+                <span class="role">Head of Backend Systems</span>
+                <p>I look after the backend servers and the autograder that marks every CS1101S assignment.</p>
+            </div>
 
-            <section class="cv-section">
-                <h2>Resume</h2>
-                <a href="docs/AV_Resume.pdf" class="download-btn" target="_blank">View resume</a>
-            </section>
-        </main>
+            <div class="entry">
+                <h3>CS1101S Programming Methodology</h3>
+                <span class="when">Aug 2026 – now</span>
+                <span class="role">Teaching Assistant</span>
+                <p>I run weekly studios for first-year students and mark their work on recursion, functional programming and the course's models of computation.</p>
+            </div>
+
+            <div class="entry">
+                <h3>CS1101S Language Migration</h3>
+                <span class="when">May 2026 – now</span>
+                <span class="role">Student Software Engineer, Teaching Module Task Force</span>
+                <p>We're moving the module from JavaScript to Python, and onto a new runtime called Conductor. I built the CSE Machine visualiser plugin for it and migrated several course modules across. Earlier on I also got Python running on the LEGO EV3 robots used in the course. That work is finished now.</p>
+            </div>
+
+            <div class="entry">
+                <h3>Shipd</h3>
+                <span class="when">Sep 2026 – now</span>
+                <span class="role">Contributor, AI Training and Evaluation</span>
+                <p>I write programming and ML problems that frontier models struggle with, each with a reference solution and tests. Every one goes through expert review before it's accepted.</p>
+            </div>
+
+            <div class="entry">
+                <h3>Source Academy, Independent Work Module</h3>
+                <span class="when">Jan – Apr 2026</span>
+                <span class="role">Software Developer</span>
+                <p>I added liveness analysis and a "Clear Dead Frames" option to the CSE Machine visualiser. It won Best Project (Platinum) at the 28th NUS STePS.</p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <div class="entry">
+                <h3><a href="https://github.com/Akshay-2007-1/o1-exchange-engine">O(1) Exchange</a></h3>
+                <span class="when">Orbital 2026, Apollo</span>
+                <p>A limit order book and matching engine in C++17, with a WebSocket server and a live React dashboard. You can swap the engine for a slower <code>std::map</code> version while it runs and watch the difference. <a href="https://o1-exchange-engine.vercel.app">Live demo</a></p>
+                <div class="tags"><span>C++17</span><span>Boost.Beast</span><span>React</span><span>SQLite</span><span>Docker</span><span>Azure</span></div>
+            </div>
+
+            <div class="entry">
+                <h3><a href="https://github.com/Akshay-2007-1/TechTokers">TechTokers</a></h3>
+                <span class="when">TikTok TechJam 2026</span>
+                <p>A layer around coding agents. It decides what an agent may do before a run, limits it while it runs, and checks what it changed on disk before anything is kept.</p>
+                <div class="tags"><span>TypeScript</span><span>Fastify</span><span>React</span><span>Docker</span></div>
+            </div>
+
+            <div class="entry">
+                <h3>Agent memory system</h3>
+                <span class="when">2025 – 2026</span>
+                <p>A Generative Agents-style memory setup for AI characters. Each character has its own memory, ranked by how recent, important and relevant it is. It kept long conversations more consistent than plain RAG did.</p>
+                <div class="tags"><span>Python</span><span>FastAPI</span><span>LLMs</span></div>
+            </div>
+
+            <div class="entry">
+                <h3><a href="https://github.com/Akshay-2007-1/roleplay">roleplay</a></h3>
+                <span class="when">2026</span>
+                <p>A roleplay engine that keeps the story's state in markdown files instead of the chat history, so a turn costs the same on day one as on day thirty.</p>
+                <div class="tags"><span>Python</span><span>FastAPI</span></div>
+            </div>
+
+            <div class="entry">
+                <h3><a href="https://github.com/Akshay-2007-1/omarchy-storage-drilldown">omarchy-storage-drilldown</a></h3>
+                <span class="when">2026</span>
+                <p>A disk usage widget for the Omarchy desktop. Click into any folder to see what's taking up the space.</p>
+                <div class="tags"><span>QML</span><span>Linux</span></div>
+            </div>
+
+            <div class="entry">
+                <h3>Terminal multiplayer game</h3>
+                <span class="when">24-hour hackathon</span>
+                <p>A real-time two-player game over TCP, written in C. I led the team.</p>
+                <div class="tags"><span>C</span><span>Sockets</span></div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+
+            <div class="entry">
+                <h3>National University of Singapore</h3>
+                <span class="when">Aug 2025 – now</span>
+                <span class="role">B.Comp, Computer Science and Mathematics</span>
+                <p>GPA 4.75 / 5. Dean's List, AY25/26 Semester 2.</p>
+            </div>
+
+            <div class="entry">
+                <h3>IIIT Hyderabad</h3>
+                <span class="when">Aug 2024 – Mar 2025</span>
+                <span class="role">B.Tech CS and M.Sc Computational Science, transferred to NUS</span>
+                <p>GPA 9.8 / 10.</p>
+            </div>
+
+            <div class="entry">
+                <h3>Sahyadri School KFI</h3>
+                <span class="when">2017 – 2024</span>
+                <span class="role">ICSE and ISC</span>
+                <p>97.8% in ISC (top 1% in India), with 100 in Mathematics.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skill-group">
+                <h3>Languages</h3>
+                <div class="tags"><span>Python</span><span>C++17</span><span>C</span><span>TypeScript</span><span>JavaScript</span><span>Java</span><span>Kotlin</span><span>SQL</span></div>
+            </div>
+            <div class="skill-group">
+                <h3>Tools</h3>
+                <div class="tags"><span>React</span><span>Node.js</span><span>FastAPI</span><span>Docker</span><span>CMake</span><span>Google Test</span><span>AWS Lambda</span><span>Azure</span><span>Git</span><span>Linux</span></div>
+            </div>
+        </section>
 
         <footer>
-            <p>&copy; 2026 Akshay Vemulapalli. </p>
+            Reach me at <a href="mailto:akshayvemulapalli2007@gmail.com">akshayvemulapalli2007@gmail.com</a>.
         </footer>
-    </div>
+    </main>
 </body>
 </html>
